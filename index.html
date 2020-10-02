@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <!-- CSS file-->
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Weather Web App</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weather App</h1>
+
+      <form class="form-location">
+            <input
+              type="text"
+              name="location"
+              class="form-control"
+              placeholder="Enter Location Name here ..."
+              autocomplete="off"
+              required
+            />
+      </form>
+
+      <div class="card shadow-lg rounded d-none">
+        <img class="icon" src="" alt="" />
+        <div class="details"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/weatherApi.js"></script>
+    </body>
+</html>
