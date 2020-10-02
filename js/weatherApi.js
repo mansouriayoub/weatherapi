@@ -71,12 +71,12 @@ weatherForm.addEventListener('submit', (e) => {
     updateCityWeather(cityNameValue)
         .then(data => updateUI(data))
         .catch(err => updateError(err))
-    // saving city to localStorage
+    // saving data to localStorage
     localStorage.setItem('city', cityNameValue)
 });
 
 if (localStorage.getItem('city')) {
     updateCityWeather(localStorage.getItem('city'))
         .then(data => updateUI(data))
-        .catch(err => console.log(err))
+        .catch(err => updateError(err))
 }
