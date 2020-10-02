@@ -28,7 +28,7 @@ const updateUI = (data) => {
     details.innerHTML = `
         <h5>${cityWeather.name}</h5>
           <div>${cityWeather.weather[0].description}</div>
-          <div>
+          <div class="infos">
             <span>${weatherConverted}</span>
             <span>&deg;C</span>
           </div>
@@ -71,4 +71,12 @@ weatherForm.addEventListener('submit', (e) => {
     updateCityWeather(cityNameValue)
         .then(data => updateUI(data))
         .catch(err => updateError(err))
+    // saving city to localStorage
+    localStorage.setItem('city', cityNameValue)
 });
+
+if (localStorage.getItem('city')) {
+    updateCityWeather(localStorage.getItem('city'))
+        .then(data => updateUI(data))
+        .catch(err => console.log(err))
+}
